@@ -1,0 +1,3 @@
+#table entry for each User
+userIdAndCat
+userId, Cat (category for quiz e.g poster 2016).  Store a {total:60, index:2 movie1:20, movie2:40, movie3: movie4}
