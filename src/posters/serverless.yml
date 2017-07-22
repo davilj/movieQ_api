@@ -67,12 +67,23 @@ iamRoleStatements:
 #    - exclude-me-dir/**
 
 functions:
-  movieq:
-    handler: handler.get
-    description: get default movie template
+  posters:
+    handler: handler.posters
+    description: get posters for a specific year
     events: # All events associated with this function
       - http:
           path: posters/{year}
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-east-1:296436978249:userpool/us-east-1_R2YsaKoBf
+
+  poster:
+    handler: handler.poster
+    description: get a specific poster
+    events: # All events associated with this function
+      - http:
+          path: poster/{id}
           method: get
           cors: true
           authorizer:
